@@ -1,0 +1,246 @@
+
+
+  @import url(https://fonts.googleapis.com/css?family=Lato:300);
+  * {
+    box-sizing: border-box; }
+  
+  html,
+  body {
+    color: #555;
+    font-family: helvetica;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    margin-top: 50px;
+   }
+    #app {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  
+  #login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #FFF;
+    background: #6ab0de;
+    position: absolute;
+    height: 500px;
+    width: 80%;
+    padding: 0px;
+    margin: 0;
+  }
+    #login h2 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      text-align: center;
+      padding: 30px 0 50px;
+      margin: 0; }
+    #login .form-group {
+      padding: 0 20px 20px; }
+      #login .form-group label {
+        font-size: 18px;
+        text-transform: uppercase; }
+      #login .form-group input {
+        color: #2980b9;
+        width: 100%;
+        display: block;
+        padding: 10px;
+        border: 0;
+        margin: 0;
+        outline: none; }
+    #login button {
+      color: #FFF;
+      background: #409ad5;
+      font-size: 18px;
+      width: 100%;
+      padding: 20px;
+      border: 0;
+      margin: 0;
+      cursor: pointer; }
+  
+  .canvas {
+    position: relative;
+    width: 100%;
+    overflow: auto; }
+    .canvas .chatroom-meta {
+      font-size: 12px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      z-index: 4000; }
+      .canvas .chatroom-meta:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.3; }
+      .canvas .chatroom-meta h2 {
+        text-align: center;
+        padding: 20px 0 20px;
+        margin: 0;
+        cursor: pointer;
+        z-index: 400; }
+    .canvas #chat {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 52px 0 54px;
+      overflow: auto; }
+      .canvas #chat .record {
+        display: block;
+        float: left;
+        width: 100%; }
+      .canvas #chat .bubble {
+        background: #e7f2fa;
+        font-size: 12px;
+        display: inline-block;
+        max-width: 60%;
+        position: relative;
+        padding: 10px 60px 10px 20px;
+        margin: 0 30px 10px;
+        border-radius: 11px; }
+        .canvas #chat .bubble:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -9px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 0 20px 20px;
+          border-color: transparent transparent #e7f2fa transparent; }
+        .canvas #chat .bubble.self {
+          float: right; }
+          .canvas #chat .bubble.self:before {
+            left: auto;
+            right: -9px;
+            border-width: 0 20px 20px 0;
+            border-color: transparent transparent #e7f2fa transparent; }
+        .canvas #chat .bubble .name,
+        .canvas #chat .bubble .message {
+          display: inline; }
+        .canvas #chat .bubble .name {
+          font-weight: bold; }
+        .canvas #chat .bubble .time {
+          color: #BBB;
+          font-size: 9px;
+          position: absolute;
+          bottom: 10px;
+          right: 20px; }
+    .canvas .composer {
+      background: #bedcf0;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 0;
+      margin: 0; }
+      .canvas .composer .composer-box {
+        position: relative;
+        padding-right: 80px; }
+        .canvas .composer .composer-box textarea {
+          display: block;
+          width: 90%;
+          padding: 10px;
+          border: 0;
+          margin: 0;
+          border-radius: 11px;
+          outline: none;
+          resize: none;
+       }
+
+        .canvas .composer .composer-box .btnSend  {
+          color: #2980b9;
+          font-size: 16px;
+          background: #bedcf0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          width: 80px;
+          padding: 10px;
+          border: 0;
+          margin: 0;
+          cursor: pointer; 
+        }
+
+          
+  .btnShare {
+          color: white;
+          font-size: 16px;
+          border: none;
+          border-radius: 6px;
+          background: mediumaquamarine;
+          position: absolute;
+          top: 0;
+          display: block;
+          width: 80px;
+          padding: 10px;
+          border: 0;
+          margin: 0;
+          margin-right: 20px;
+          cursor: pointer;
+  }
+  
+  .btns {
+    display: flex;
+    justify-content: end;
+  }
+input {
+  font-size: 22px;
+}
+#coins {
+  font-size: 17px;
+}
+.menu-main {
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu-main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.right-item {
+  float: right;
+}
+
+.menu-main a {
+  text-decoration: none;
+  display: block;
+  line-height: 70px;
+  padding: 0 40px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: black;
+  transition: 0.3s linear;
+}
+.menu-main a:hover {
+  background-color: rgb(55, 226, 229);
+  color: white;
+}
+.top-menu {
+  position: fixed;
+  z-index: 9999;
+  width: 30%;
+  background-color: white;
+  top: 0;
+  right: 0;
+}

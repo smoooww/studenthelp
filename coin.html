@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="coin.css">
+</head>
+<body>
+    <nav class="top-menu">
+        <ul class="menu-main">
+          <li class="right-item"><a href="home.html">HOME</a></li>
+          <li class="right-item"><a href="chat.html" onclick='passcoinsshop()'>CHAT</a></li>
+          <li class="right-item"><a href="coin.html" onclick='passcoinsshop()'>SHOP</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+    <p id="result"></p>
+    <div class="box">
+    <div class="picture">
+    <p id="buyfox"><img src="https://images.unsplash.com/photo-1621206593424-6e4e8f6336e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1934&q=80"></p>
+</div>
+<div class="picture">
+    <p id="buydog"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1924&q=80"></p>
+</div>
+<div class="picture">
+    <img class="buymeme" src="https://images.unsplash.com/photo-1587813368604-e793305db704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"/>
+  </div>
+</div>
+
+<div class="buttons">
+<button id="btnfox" onclick="fox()">Buy fox 10🪙</button>
+<button id="btndog"onclick="dog()">Buy dog 10🪙</button>
+<button class="btnmeme" onclick="meme()">Buy Meme 15🪙</button>
+</div>
+</div>
+<!-- <a href='chat.html' onclick='passcoinsshop()'><button class="btnShop">Back</button></a> -->
+
+    <script src="coin.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+    <div id="app" ng-app="chatty">
+        <div id="controller" ng-controller="appCtl as app">
+          <div id="login" ng-controller="loginCtl as login" ng-hide="app.name">
+            <h2>Helping Hand</h2>
+            <div class="form-group">
+              <label>name</label>
+              <input type="text" placeholder='Name...' ng-model="login.name" id="name"/>
+            </div>
+            <div class="form-group">
+              <label>room</label>
+              <input type="text" placeholder='I need.../I want to share...' ng-model="login.room" id="room"/>
+            </div>
+            <button ng-click="login.do()">Start</button>
+          </div>
+
+          <nav class="top-menu">
+            <ul class="menu-main">
+              <li class="right-item"><a href="home.html">HOME</a></li>
+              <li class="right-item"><a href="chat.html">CHAT</a></li>
+              <li class="right-item"><a href="coin.html" onclick='passcoins()'>SHOP</a></li>
+            </ul>
+          </nav>
+
+          <div class="canvas" ng-controller="chatCtl as chat" ng-show="app.name" ng-cloak="ng-cloak">
+            <p id="coins"></p>
+            <div class="chatroom-meta">
+              <h2 ng-click="app.logout()">{{ app.room }}</h2>
+            </div>
+            <div id="chat">
+              <div class="record" ng-repeat="message in chat.history">
+                <div class="bubble" ng-class="{self: message.content.id==app.id}">
+                  <div class="name">{{ message.content.name }}</div>
+                  <div class="message">{{ message.content.message }}</div>
+                  <div class="time">{{ message.created.getHours() }}:{{ message.created.getMinutes() }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="composer">
+              <div class="composer-box">
+                <textarea class="inputField" rows="1" ng-model="chat.message" ng-enter="chat.send()"></textarea>
+                <div class="btns">
+                <button class='btnSend' ng-click="chat.send()">Send</button>
+                <button class='btnShare' onclick="play()" ng-click="chat.share()">Share</button>
+              </div>
+                <p id="errormessage"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js"></script>
+<script src="https://dweet.io/client/dweet.io.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
